@@ -11,7 +11,7 @@ const app = express();
 dbConnect();
 
 app.use(cors({
-    origin: "https://ecom-frontend-chi-bay.vercel.app" ,
+    origin: ["https://ecom-frontend-chi-bay.vercel.app"],
     methods: ["POST", "GET", "DELETE", "PUT"],
     credentials: true
 }));
