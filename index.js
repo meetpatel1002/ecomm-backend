@@ -6,16 +6,21 @@ const User = require("./src/models/users.model.js")
 const Seller = require("./src/models/seller.model.js")
 const Cart = require('./src/models/cart.model.js')
 // const Order = require('./src/models/order.model.js')
-const app = express()
+const app = express();
 
-dbConnect()
+dbConnect();
 
 app.use(cors({
     origin: ["*"],
     methods: ["POST", "GET", "DELETE", "PUT"],
     credentials: true
-}))
-app.use(express.json())
+}));
+
+app.use(express.json());
+
+app.get("/",(req,res)=> {
+    res.send("Welcome to my E-comm");
+});
 
 // PRODUCTS
 app.post("/products", async (req, res) => {
