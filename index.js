@@ -18,12 +18,12 @@ app.use(cors({
 
 app.use(express.json());
 
-app.get("/products",(req,res)=> {
+app.get("/",(req,res)=> {
     res.send("Welcome to my E-comm");
 });
 
 // PRODUCTS
-app.post("/", async (req, res) => {
+app.post("/products", async (req, res) => {
     try {
         const product = new Product(req.body);
         await product.save();
