@@ -11,7 +11,7 @@ const app = express();
 dbConnect();
 
 app.use(cors({
-    origin: ["*"],
+    origin: "http://localhost:4200", // Change to your frontend URL
     methods: ["POST", "GET", "DELETE", "PUT"],
     credentials: true
 }));
